@@ -226,7 +226,7 @@ class WorkerBase(ServerNode):
         self.periodic_callbacks['heartbeat'] = pc
         self._address = contact_address
 
-        if self.memory_limit:
+        if False: # self.memory_limit: # DISABLING MEMORY MONITORING
             self._memory_monitoring = False
             pc = PeriodicCallback(self.memory_monitor,
                                   self.memory_monitor_interval * 1000,
